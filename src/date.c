@@ -16,6 +16,7 @@ Date read_birth_date(void) {
 		printf("Insert your birthdate (DD/MM/AAAA): ");
 
 		if (scanf("%u/%u/%u", &d.day, &d.month, &d.year) != 3) {
+			CLEAR_SCREEN();
 			printf("Invalid format! Use the pattern DD/MM/AAAA\n");
 			while (getchar() != '\n');
 			continue;

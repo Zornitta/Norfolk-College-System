@@ -10,7 +10,7 @@ void read_nationality(char *dest) {
 
 	while (1) {
 		CLEAR_SCREEN();
-		printf("Type your nationality alpha-3 (3 letters - ex: USA, BRA, GBR): ");
+		printf("Type your nationality alpha-3 (3 letters - ex: USA, BRA, GBR)\n\n... ");
 
 		if (scanf("%3s", input) == 1) {
 			while (getchar() != '\n');

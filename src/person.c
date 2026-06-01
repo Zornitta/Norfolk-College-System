@@ -6,7 +6,6 @@
 #include "person.h"
 #include "date.h"
 #include "read_name.h"
-#include "read_birthdate.h"
 #include "read_gender.h"
 #include "read_race.h"
 #include "read_civil_status.h"
@@ -26,7 +25,6 @@ Person create_person(void)
 	p.civil_status = read_civil_status();
 	read_nationality(p.nationality);
 	p.isDisabled = read_disabled();
-	
 	p.cpf = read_cpf();
 
 	return p;
@@ -46,7 +44,7 @@ const char* get_race_name(Race r) {
 		case Black:		return "Black";
 		case Mixed:		return "Mixed";
 		case Asian:		return "Asian";
-		case Native_American	return "Native American";
+		case Native_American:	return "Native American";
 		default:		return "Unknown";
 	}
 }
@@ -55,7 +53,7 @@ const char* get_civil_status_name(Civil_Status s) {
 	switch(s) {
 		case Single:		return "Single";
 		case Married:		return "Married";
-		case Separated		return "Separated";
+		case Separated:		return "Separated";
 		case Widowed:		return "Widowed";
 		case Divorced:		return "Divorced";
 		case Stable_Union:	return "Stable_Union";

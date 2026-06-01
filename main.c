@@ -49,7 +49,7 @@ int main(void) {
 				printf("2. Teacher\n");
 				printf("3. Staff\n\n");
 				printf("0. Return to Home\n");
-				printf("Insert the option: ");
+				printf("\nInsert the option: ");
 
 				if (scanf("%d", &register_option) != 1) {
 					while (getchar() != '\n');
@@ -70,9 +70,9 @@ int main(void) {
 					printf("\nName: %s", p.name);
 					printf("\nSurname: %s", p.surname);					
 					printf("\nAge: %u", get_age(&p.birthDate));
-					printf("\nGender: %c", get_gender_name(p.gender));
+					printf("\nGender: %s", get_gender_name(p.gender));
 					printf("\nRace: %s", get_race_name(p.race));
-					printf("\nCivil Status: %s", get_civil_status(p.civil_status));
+					printf("\nCivil Status: %s", get_civil_status_name(p.civil_status));
 					printf("\nNationality: %s", p.nationality);
 					printf("\nIs Disabled: %c", p.isDisabled);
 					printf("\nCPF: %s", p.cpf);

@@ -21,7 +21,7 @@ char* read_name(const char *label)
 		//Limits the string's size
 		if (buffer[strcspn(buffer, "\n")] != '\n')
 		{
-			printf("\nThe %s is too long! Try it again.\n");
+			printf("\nThe %s is too long! Try it again.\n", label);
 			int c;
 			while ((c = getchar()) != '\n' && c != EOF);
 			continue;
@@ -40,7 +40,7 @@ char* read_name(const char *label)
 	}
 	
 	//ToUpper All
-	for (int i = 0; i < strlen(buffer); i++)
+	for (size_t i = 0; i < strlen(buffer); i++)
 	{
 		buffer[i] = toupper(buffer[i]);
 	}

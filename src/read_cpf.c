@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 
 #include "read_cpf.h"
 #include "is_numeric_string.h"
@@ -6,22 +8,26 @@
 
 char* read_cpf(void) {
 
-	char buffer[12];
+	char buffer[32];
 
 	while (1) {
 
 		CLEAR_SCREEN();	
 		printf("\nType your CPF\n\n... ");
-		fgets(buffer, sizeof(buffer), stdin);
+		
+		if (fgets(buffer, sizeof(buffer), stdin) == NULL) {
+			continue;		
+		}
 
-		//Verify if the size matches
-		if (buffer[strcspn(buffer, "\n")] != '\n') {
-			printf("\nTyped CPF is too long! Try it again (Don't use dots and dashes).\n");
+		size_t len = strlen(buffer);
+		if (len > 0 && buffer[len - 1] != '\n') {
+			printf("\nTyped CPF is too long! Try it agan (Don't use dots and dashes).\n");
+
 			int c;
 			while ((c = getchar()) != '\n' && c != EOF);
-			continue;
 		}
-		buffer[strcspn(buffer, "\n") = '\0'];
+
+		buffer[strcspn(buffer, "\n")] = '\0';
 
 		if (!is_numeric_string(buffer)) {
 			printf("\nInvalid characters! Type ONLY numbers (no letters, dots or dashes).\n");
