@@ -1,0 +1,3 @@
+//Ignore temporary files, builds results, and files generated.
+
+*obj
